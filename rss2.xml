@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+  xmlns:atom="http://www.w3.org/2005/Atom"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Darry Ring</title>
+    <link>http://buster2015.github.io/</link>
+    <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
+    
+    <description>Only改变才会进步</description>
+    <pubDate>Sun, 24 Apr 2016 01:12:21 GMT</pubDate>
+    <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>Hello World</title>
+      <link>http://buster2015.github.io/2016/04/24/hello-world/</link>
+      <guid>http://buster2015.github.io/2016/04/24/hello-world/</guid>
+      <pubDate>Sun, 24 Apr 2016 03:49:27 GMT</pubDate>
+      <description>
+      
+        &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
+      
+      </description>
+      
+      <content:encoded>&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;documentation&lt;/a&gt; for more info. If you get any problems when using Hexo, you can find the answer in &lt;a href=&quot;https://hexo.io/docs/troubleshooting.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;troubleshooting&lt;/a&gt; or you can ask me on &lt;a href=&quot;https://github.com/hexojs/hexo/issues&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&quot;Quick-Start&quot;&gt;&lt;a href=&quot;#Quick-Start&quot; class=&quot;headerlink&quot; title=&quot;Quick Start&quot;&gt;&lt;/a&gt;Quick Start&lt;/h2&gt;&lt;h3 id=&quot;Create-a-new-post&quot;&gt;&lt;a href=&quot;#Create-a-new-post&quot; class=&quot;headerlink&quot; title=&quot;Create a new post&quot;&gt;&lt;/a&gt;Create a new post&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ hexo new &lt;span class=&quot;string&quot;&gt;&quot;My New Post&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;More info: &lt;a href=&quot;https://hexo.io/docs/writing.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Writing&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&quot;Run-server&quot;&gt;&lt;a href=&quot;#Run-server&quot; class=&quot;headerlink&quot; title=&quot;Run server&quot;&gt;&lt;/a&gt;Run server&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ hexo server&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;More info: &lt;a href=&quot;https://hexo.io/docs/server.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Server&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&quot;Generate-static-files&quot;&gt;&lt;a href=&quot;#Generate-static-files&quot; class=&quot;headerlink&quot; title=&quot;Generate static files&quot;&gt;&lt;/a&gt;Generate static files&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ hexo generate&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;More info: &lt;a href=&quot;https://hexo.io/docs/generating.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Generating&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&quot;Deploy-to-remote-sites&quot;&gt;&lt;a href=&quot;#Deploy-to-remote-sites&quot; class=&quot;headerlink&quot; title=&quot;Deploy to remote sites&quot;&gt;&lt;/a&gt;Deploy to remote sites&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ hexo deploy&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;More info: &lt;a href=&quot;https://hexo.io/docs/deployment.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Deployment&lt;/a&gt;&lt;/p&gt;
+</content:encoded>
+      
+      
+    </item>
+    
+    <item>
+      <title>MarkDown的简单用法</title>
+      <link>http://buster2015.github.io/2016/04/24/MarkDown-SimpleUsage/</link>
+      <guid>http://buster2015.github.io/2016/04/24/MarkDown-SimpleUsage/</guid>
+      <pubDate>Sun, 24 Apr 2016 03:49:27 GMT</pubDate>
+      <description>
+      
+        &lt;p&gt;&lt;img src=&quot;/images/icon.jpg&quot; alt=&quot; big data is new energy &quot;&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;10:07 上午 星期六, 四月 23, 2016&lt;/p&gt;
+&lt;h2 id=&quot;成为习惯&quot;&gt;&lt;a href=&quot;#成为习惯&quot; class
+      
+      </description>
+      
+      <content:encoded>&lt;p&gt;&lt;img src=&quot;/images/icon.jpg&quot; alt=&quot; big data is new energy &quot;&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;10:07 上午 星期六, 四月 23, 2016&lt;/p&gt;
+&lt;h2 id=&quot;成为习惯&quot;&gt;&lt;a href=&quot;#成为习惯&quot; class=&quot;headerlink&quot; title=&quot;成为习惯&quot;&gt;&lt;/a&gt;&lt;strong&gt;成为习惯&lt;/strong&gt;&lt;/h2&gt;&lt;p&gt;&lt;blockquote&gt;&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;日常记事中，用普遍文本的情况不在少数，但是文本本身的并没有特殊的格式含义，要表示一些特殊的含义也会在头或尾加一些*号，下划线，分割线等，来隔断文本块，区分内容信息等。那现在Markdown变得非常合适，只要稍微记住几个语法字符，就可以轻松的标记出来标题、段落、列表，长久使用形成习惯，能够带来很多方便。&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;&lt;p&gt;所以可以把Markdown作为日常文档记录语言。&lt;/p&gt;&lt;/blockquote&gt;&lt;/p&gt;
+&lt;h2 id=&quot;变得简单&quot;&gt;&lt;a href=&quot;#变得简单&quot; class=&quot;headerlink&quot; title=&quot;变得简单&quot;&gt;&lt;/a&gt;&lt;strong&gt;变得简单&lt;/strong&gt;&lt;/h2&gt;&lt;p&gt;&lt;small&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;markdown是一种轻量级的标记语言。语法简单，书写简单，只需要像写普通文本一样，在行首加上特殊的字符，就可以标记成标题，段落，列表，就是markdown。markdowng格式的文本，更容易阅读和理解，而且可以轻松转化成html，pdf等。详细标签说明见下面链接。&lt;/small&gt;&lt;/p&gt;
+&lt;h2 id=&quot;使用工具&quot;&gt;&lt;a href=&quot;#使用工具&quot; class=&quot;headerlink&quot; title=&quot;使用工具&quot;&gt;&lt;/a&gt;&lt;strong&gt;使用工具&lt;/strong&gt;&lt;/h2&gt;&lt;p&gt;&lt;small&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;使用Notepad,EditPlus,UltraEdit等等，只要可以写文本的编辑器都可以。让Notepad支持Markdonw语法高亮&lt;/small&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;下载userDefineLang.xml&lt;/li&gt;
+&lt;li&gt;将 userDefineLang.xml 放置到此目录：C:\Users\Administrator\AppData\Roaming\Notepad++&lt;/li&gt;
+&lt;li&gt;重启 Notepad++，在语言菜单下可以看到自定义的 Markdown 高亮规则&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;也可以使用现成的工具MarkdownPad，可以自动生成Markdown标签。&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&quot;开始使用，先搭建环境，各种安装即可，点击下载&quot;&gt;&lt;a href=&quot;#开始使用，先搭建环境，各种安装即可，点击下载&quot; class=&quot;headerlink&quot; title=&quot;开始使用，先搭建环境，各种安装即可，点击下载&quot;&gt;&lt;/a&gt;&lt;strong&gt;开始使用，先搭建环境，各种安装即可，点击下载&lt;/strong&gt;&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&quot;http://www.python.org/download/&quot; title=&quot;python-2.7.2.msi&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;python-2.7.2.msi&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&quot;http://www.python.org/download/&quot; title=&quot;Markdown-2.0.win32.exe&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Markdown-2.0.win32.exe&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://pypi.python.org/packages/any/M/Markdown/Markdown-2.4.win-amd64.exe#md5=87479a3d05c9c05a1ab5d610ee4f99ec&quot; title=&quot;Markdown-2.4.win-amd64.exe&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Markdown-2.4.win-amd64.exe&lt;/a&gt; &lt;code&gt;有需要64位的童鞋可以点击这里下载哦！&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&quot;http://markdownpad.com/download/MarkdownPad.application&quot; title=&quot;MarkdownPad.exe&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;MarkdownPad.exe&lt;/a&gt; &lt;code&gt;这个是可以预览大侠们写出的效果&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&quot;http://files.cnblogs.com/purediy/pandoc-1.9.4.2b-setup.rar&quot; title=&quot;pandoc-1.9.4.2b-setup.exe&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;pandoc-1.9.4.2b-setup.exe&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&quot;助你一臂之力的链接&quot;&gt;&lt;a href=&quot;#助你一臂之力的链接&quot; class=&quot;headerlink&quot; title=&quot;助你一臂之力的链接&quot;&gt;&lt;/a&gt;&lt;strong&gt;助你一臂之力的链接&lt;/strong&gt;&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://wowubuntu.com/markdown/index.html&quot; title=&quot;Markdown 语法说明 (简体中文版)&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Markdown 语法说明 (简体中文版)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://ued.taobao.com/blog/2012/07/getting-started-with-markdown/&quot; title=&quot;开始使用 Markdown&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;开始使用 Markdown&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.openfoundry.org/en/news/8814?task=view&quot; title=&quot;Pandoc 用命令行转换标记语音！&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Pandoc 用命令行转换标记语音！&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://blog.xiedaima.org/notepad-markdown/&quot; title=&quot;Notepad++ 加入 Markdown 支持&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Notepad++ 加入 Markdown 支持&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;下面试着写一下程序员们的代码吧&quot;&gt;&lt;a href=&quot;#下面试着写一下程序员们的代码吧&quot; class=&quot;headerlink&quot; title=&quot;下面试着写一下程序员们的代码吧&quot;&gt;&lt;/a&gt;&lt;strong&gt;下面试着写一下程序员们的代码吧&lt;/strong&gt;&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;简单&lt;strong&gt;shell&lt;/strong&gt;脚本：&lt;/p&gt;
+&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;!/bin/bash&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; i &lt;span class=&quot;keyword&quot;&gt;in&lt;/span&gt; &amp;#123;&lt;span class=&quot;number&quot;&gt;0.&lt;/span&gt;&lt;span class=&quot;number&quot;&gt;.5&lt;/span&gt;&amp;#125;;do&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  echo $i&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;done&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;简单&lt;strong&gt;python&lt;/strong&gt;脚本：&lt;/p&gt;
+&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; __name__==&lt;span class=&quot;string&quot;&gt;&quot;__main__&quot;&lt;/span&gt;:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; i &lt;span class=&quot;keyword&quot;&gt;in&lt;/span&gt; range(&lt;span class=&quot;number&quot;&gt;6&lt;/span&gt;):&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;print&lt;/span&gt; i&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;简单&lt;strong&gt;java&lt;/strong&gt;语言：&lt;/p&gt;
+&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;HelloDigital&lt;/span&gt;&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(String [] args)&lt;/span&gt;&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; (&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; i=&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;;i&amp;lt;&lt;span class=&quot;number&quot;&gt;6&lt;/span&gt;;i++)&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	  System.out.println(i);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;看一下表格如何表现吧&quot;&gt;&lt;a href=&quot;#看一下表格如何表现吧&quot; class=&quot;headerlink&quot; title=&quot;看一下表格如何表现吧&quot;&gt;&lt;/a&gt;&lt;strong&gt;看一下表格如何表现吧&lt;/strong&gt;&lt;/h2&gt;&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;ID&lt;/th&gt;
+&lt;th&gt;姓名&lt;/th&gt;
+&lt;th&gt;年龄&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt; 001&lt;/td&gt;
+&lt;td&gt;James&lt;/td&gt;
+&lt;td&gt;21&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt; 002&lt;/td&gt;
+&lt;td&gt;John&lt;/td&gt;
+&lt;td&gt;23&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt; 003&lt;/td&gt;
+&lt;td&gt;guohongyan&lt;/td&gt;
+&lt;td&gt;22&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&quot;见本文的效果图&quot;&gt;&lt;a href=&quot;#见本文的效果图&quot; class=&quot;headerlink&quot; title=&quot;见本文的效果图&quot;&gt;&lt;/a&gt;&lt;strong&gt;见本文的效果图&lt;/strong&gt;&lt;/h2&gt;&lt;p&gt;本文的内容Markdown文本，以及预览如下：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/cutimage.png&quot; alt=&quot;本文效果图&quot;&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;em&gt;其他markdown&lt;/em&gt; &lt;strong&gt;具体使用&lt;/strong&gt; &lt;strong&gt;&lt;em&gt;说明&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&quot;http://blog.csdn.net/renfufei/article/details/41648021&quot; title=&quot;markdown基础用法so easy&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;markdown基础用法so easy&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&quot;http://www.cppblog.com/deercoder/archive/2012/06/17/179195.html&quot; title=&quot;markdown基础用法比较全面&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;markdown基础用法比较全面&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;以后大家就都可以发表一篇装逼的文章了哈，纯属玩笑，好好练习吧~&lt;/strong&gt;&lt;/p&gt;
+</content:encoded>
+      
+      <comments>http://buster2015.github.io/2016/04/24/MarkDown-SimpleUsage/#disqus_thread</comments>
+    </item>
+    
+  </channel>
+</rss>
