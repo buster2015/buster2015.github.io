@@ -8,21 +8,21 @@
     <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>Only改变才会进步</description>
-    <pubDate>Sun, 24 Apr 2016 01:12:21 GMT</pubDate>
+    <pubDate>Sun, 24 Apr 2016 13:18:43 GMT</pubDate>
     <generator>http://hexo.io/</generator>
     
     <item>
       <title>Hello World</title>
       <link>http://buster2015.github.io/2016/04/24/hello-world/</link>
       <guid>http://buster2015.github.io/2016/04/24/hello-world/</guid>
-      <pubDate>Sun, 24 Apr 2016 04:24:08 GMT</pubDate>
+      <pubDate>Sun, 24 Apr 2016 15:20:33 GMT</pubDate>
       <description>
       
-        &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
+        &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt; for more info. If you get any problems when using Hexo, you can find the answer in &lt;a href=&quot;https://hexo.io/docs/troubleshooting.html&quot;&gt;troubleshooting&lt;/a&gt; or you can ask me on &lt;a href=&quot;https://github.com/hexojs/hexo/issues&quot;&gt;GitHub&lt;/a&gt;.&lt;br&gt;
       
       </description>
       
-      <content:encoded>&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;documentation&lt;/a&gt; for more info. If you get any problems when using Hexo, you can find the answer in &lt;a href=&quot;https://hexo.io/docs/troubleshooting.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;troubleshooting&lt;/a&gt; or you can ask me on &lt;a href=&quot;https://github.com/hexojs/hexo/issues&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
+      <content:encoded>&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;documentation&lt;/a&gt; for more info. If you get any problems when using Hexo, you can find the answer in &lt;a href=&quot;https://hexo.io/docs/troubleshooting.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;troubleshooting&lt;/a&gt; or you can ask me on &lt;a href=&quot;https://github.com/hexojs/hexo/issues&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;GitHub&lt;/a&gt;.&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&quot;Quick-Start&quot;&gt;&lt;a href=&quot;#Quick-Start&quot; class=&quot;headerlink&quot; title=&quot;Quick Start&quot;&gt;&lt;/a&gt;Quick Start&lt;/h2&gt;&lt;h3 id=&quot;Create-a-new-post&quot;&gt;&lt;a href=&quot;#Create-a-new-post&quot; class=&quot;headerlink&quot; title=&quot;Create a new post&quot;&gt;&lt;/a&gt;Create a new post&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ hexo new &lt;span class=&quot;string&quot;&gt;&quot;My New Post&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;p&gt;More info: &lt;a href=&quot;https://hexo.io/docs/writing.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Writing&lt;/a&gt;&lt;/p&gt;
 &lt;h3 id=&quot;Run-server&quot;&gt;&lt;a href=&quot;#Run-server&quot; class=&quot;headerlink&quot; title=&quot;Run server&quot;&gt;&lt;/a&gt;Run server&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ hexo server&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
@@ -40,13 +40,14 @@
       <title>MarkDown的简单用法</title>
       <link>http://buster2015.github.io/2016/04/24/MarkDown-SimpleUsage/</link>
       <guid>http://buster2015.github.io/2016/04/24/MarkDown-SimpleUsage/</guid>
-      <pubDate>Sun, 24 Apr 2016 04:24:08 GMT</pubDate>
+      <pubDate>Sun, 24 Apr 2016 15:20:33 GMT</pubDate>
       <description>
       
         &lt;p&gt;&lt;img src=&quot;/images/icon.jpg&quot; alt=&quot; big data is new energy &quot;&gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;p&gt;10:07 上午 星期六, 四月 23, 2016&lt;/p&gt;
-&lt;h2 id=&quot;成为习惯&quot;&gt;&lt;a href=&quot;#成为习惯&quot; class
+&lt;h2 id=&quot;成为习惯&quot;&gt;&lt;a href=&quot;#成为习惯&quot; class=&quot;headerlink&quot; title=&quot;成为习惯&quot;&gt;&lt;/a&gt;&lt;strong&gt;成为习惯&lt;/strong&gt;&lt;/h2&gt;&lt;p&gt;&lt;blockquote&gt;&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;日常记事中，用普遍文本的情况不在少数，但是文本本身的并没有特殊的格式含义，要表示一些特殊的含义也会在头或尾加一些*号，下划线，分割线等，来隔断文本块，区分内容信息等。那现在Markdown变得非常合适，只要稍微记住几个语法字符，就可以轻松的标记出来标题、段落、列表，长久使用形成习惯，能够带来很多方便。&lt;/p&gt;
+&lt;p&gt;&lt;p&gt;所以可以把Markdown作为日常文档记录语言。&lt;/p&gt;&lt;/blockquote&gt;&lt;br&gt;
       
       </description>
       
@@ -54,7 +55,7 @@
 &lt;hr&gt;
 &lt;p&gt;10:07 上午 星期六, 四月 23, 2016&lt;/p&gt;
 &lt;h2 id=&quot;成为习惯&quot;&gt;&lt;a href=&quot;#成为习惯&quot; class=&quot;headerlink&quot; title=&quot;成为习惯&quot;&gt;&lt;/a&gt;&lt;strong&gt;成为习惯&lt;/strong&gt;&lt;/h2&gt;&lt;p&gt;&lt;blockquote&gt;&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;日常记事中，用普遍文本的情况不在少数，但是文本本身的并没有特殊的格式含义，要表示一些特殊的含义也会在头或尾加一些*号，下划线，分割线等，来隔断文本块，区分内容信息等。那现在Markdown变得非常合适，只要稍微记住几个语法字符，就可以轻松的标记出来标题、段落、列表，长久使用形成习惯，能够带来很多方便。&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;&lt;p&gt;所以可以把Markdown作为日常文档记录语言。&lt;/p&gt;&lt;/blockquote&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;&lt;p&gt;所以可以把Markdown作为日常文档记录语言。&lt;/p&gt;&lt;/blockquote&gt;&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&quot;变得简单&quot;&gt;&lt;a href=&quot;#变得简单&quot; class=&quot;headerlink&quot; title=&quot;变得简单&quot;&gt;&lt;/a&gt;&lt;strong&gt;变得简单&lt;/strong&gt;&lt;/h2&gt;&lt;p&gt;&lt;small&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;markdown是一种轻量级的标记语言。语法简单，书写简单，只需要像写普通文本一样，在行首加上特殊的字符，就可以标记成标题，段落，列表，就是markdown。markdowng格式的文本，更容易阅读和理解，而且可以轻松转化成html，pdf等。详细标签说明见下面链接。&lt;/small&gt;&lt;/p&gt;
 &lt;h2 id=&quot;使用工具&quot;&gt;&lt;a href=&quot;#使用工具&quot; class=&quot;headerlink&quot; title=&quot;使用工具&quot;&gt;&lt;/a&gt;&lt;strong&gt;使用工具&lt;/strong&gt;&lt;/h2&gt;&lt;p&gt;&lt;small&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;使用Notepad,EditPlus,UltraEdit等等，只要可以写文本的编辑器都可以。让Notepad支持Markdonw语法高亮&lt;/small&gt;&lt;/p&gt;
 &lt;ol&gt;
