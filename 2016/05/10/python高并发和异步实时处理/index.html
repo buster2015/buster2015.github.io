@@ -1,0 +1,941 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="python,高并发,tornado，coroutine," />
+
+
+
+
+
+  <link rel="alternate" href="/rss2.xml" title="Darry Ring" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/icon.jpg?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="5:46 下午 星期二, 五月 10, 2016
+高并发处理只是为了说明一些问题，所以只贴出了一部分代码，对于并发问题，个人实力有限，未免有不正之处，望大牛指正，有兴趣的兄弟姐妹们也可以随时评论一起讨论哈">
+<meta property="og:type" content="article">
+<meta property="og:title" content="python高并发和异步实时处理">
+<meta property="og:url" content="http://buster2015.github.io/2016/05/10/python高并发和异步实时处理/index.html">
+<meta property="og:site_name" content="Darry Ring">
+<meta property="og:description" content="5:46 下午 星期二, 五月 10, 2016
+高并发处理只是为了说明一些问题，所以只贴出了一部分代码，对于并发问题，个人实力有限，未免有不正之处，望大牛指正，有兴趣的兄弟姐妹们也可以随时评论一起讨论哈">
+<meta property="og:image" content="http://buster2015.github.io/images/icon.jpg">
+<meta property="og:updated_time" content="2016-05-10T10:21:35.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="python高并发和异步实时处理">
+<meta name="twitter:description" content="5:46 下午 星期二, 五月 10, 2016
+高并发处理只是为了说明一些问题，所以只贴出了一部分代码，对于并发问题，个人实力有限，未免有不正之处，望大牛指正，有兴趣的兄弟姐妹们也可以随时评论一起讨论哈">
+<meta name="twitter:image" content="http://buster2015.github.io/images/icon.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 114784825373363200,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> python高并发和异步实时处理 | Darry Ring </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?0c6e13777584ce7d6cd382de90d49c0b";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta custom-logo">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Darry Ring</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">just do it</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-th fa-fw"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-user fa-fw"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tagcloud">
+          <a href="/tagcloud" rel="section">
+            
+              <i class="menu-item-icon fa fa-question-circle fa-fw"></i> <br />
+            
+            标签云
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404.html" rel="section">
+            
+              <i class="menu-item-icon fa fa-heartbeat fa-fw"></i> <br />
+            
+            公益404
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-recent_posts">
+          <a href="/recent_posts" rel="section">
+            
+              <i class="menu-item-icon fa fa-question-circle fa-fw"></i> <br />
+            
+            最近文章
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="#" class="st-search-show-outputs">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <form class="site-search-form">
+  <input type="text" id="st-search-input" class="st-search-input st-default-search-input" />
+</form>
+
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+    (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+    e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+  _st('install', 'b_txJ4ddk5cBk4yup9U6','2.0.0');
+</script>
+
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                python高并发和异步实时处理
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-05-10T18:21:48+08:00" content="2016-05-10">
+              2016-05-10
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/高并发/" itemprop="url" rel="index">
+                    <span itemprop="name">高并发</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/05/10/python高并发和异步实时处理/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/10/python高并发和异步实时处理/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/05/10/python高并发和异步实时处理/" class="leancloud_visitors" data-flag-title="python高并发和异步实时处理">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+              &nbsp; | &nbsp;
+              <span class="page-pv"><i class="fa fa-file-o"></i>
+              <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+              </span>
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><img src="/images/icon.jpg" alt=" big data is new energy "></p>
+<hr>
+<p>5:46 下午 星期二, 五月 10, 2016</p>
+<h2 id="高并发处理"><a href="#高并发处理" class="headerlink" title="高并发处理"></a><strong>高并发处理</strong></h2><p>只是为了说明一些问题，所以只贴出了一部分代码，对于并发问题，个人实力有限，未免有不正之处，望大牛指正，有兴趣的兄弟姐妹们也可以随时评论一起讨论哈</p>
+<a id="more"></a>
+<p><strong>使用tornado通过异步协程</strong><br>@tornado.web.asynchronous<br>@gen.coroutine<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> tornado.web</span><br><span class="line"><span class="keyword">from</span> tornado <span class="keyword">import</span> gen</span><br><span class="line"><span class="keyword">from</span> handlers.center.base <span class="keyword">import</span> BaseHandler</span><br><span class="line"><span class="keyword">import</span> concurrent.futures</span><br><span class="line"></span><br><span class="line"><span class="comment">#创建一个Logger</span></span><br><span class="line">DS_LOG = logging.getLogger(<span class="string">"data_access_log"</span>)</span><br><span class="line">DS_LOG.setLevel(logging.DEBUG)</span><br><span class="line"><span class="comment"># 创建一个handler，用于写入日志文件</span></span><br><span class="line">dsHandler = logging.FileHandler(<span class="string">'push_service.log'</span>)</span><br><span class="line"><span class="comment"># 定义handler的输出格式</span></span><br><span class="line">formatter = logging.Formatter(<span class="string">'%(asctime)s - %(name)s - %(levelname)s - %(message)s'</span>)</span><br><span class="line"><span class="comment"># FileHandler设置日志输出格式</span></span><br><span class="line">dsHandler.setFormatter(formatter)</span><br><span class="line"><span class="comment"># 给logger添加handler</span></span><br><span class="line">DS_LOG.addHandler(dsHandler)</span><br><span class="line"></span><br><span class="line">executor = concurrent.futures.ThreadPoolExecutor(<span class="number">100</span>)</span><br><span class="line"><span class="string">"""</span><br><span class="line">目标人群</span><br><span class="line">"""</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Target_Group_Handler</span><span class="params">(BaseHandler)</span>:</span></span><br><span class="line"><span class="meta">	@auth_required</span></span><br><span class="line"><span class="meta">	@tornado.web.asynchronous</span></span><br><span class="line"><span class="meta">	@gen.coroutine</span></span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">get</span><span class="params">(self)</span>:</span></span><br><span class="line">		set_default_headers(self)</span><br><span class="line">		<span class="keyword">yield</span> executor.submit(Target_Group_Handler.do_handler,self)</span><br><span class="line">		self.finish()</span><br><span class="line"></span><br><span class="line"><span class="meta">	@auth_required</span></span><br><span class="line"><span class="meta">	@tornado.web.asynchronous</span></span><br><span class="line"><span class="meta">	@gen.coroutine</span></span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">post</span><span class="params">(self)</span>:</span></span><br><span class="line">		set_default_headers(self)<span class="comment">#设置响应属性</span></span><br><span class="line">		<span class="keyword">yield</span> executor.submit(Target_Group_Handler.do_handler,self)</span><br><span class="line">		self.finish()</span><br><span class="line"></span><br><span class="line">	<span class="comment">#@run_on_executor</span></span><br><span class="line">	<span class="string">"""</span><br><span class="line">	进行业务逻辑分发处理</span><br><span class="line">	"""</span></span><br><span class="line"><span class="meta">	@classmethod</span></span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">do_handler</span><span class="params">(cls,instance)</span>:</span></span><br><span class="line">		ip = instance.request.remote_ip</span><br><span class="line">		callback=<span class="keyword">None</span><span class="comment">#ajax发起get请求时，需要回调函数，此处为post请求，所以设置为None</span></span><br><span class="line">		cid=instance.get_argument(<span class="string">"cid"</span>)<span class="comment">#获取客户id</span></span><br><span class="line">		appkey=instance.request.arguments[<span class="string">'pwd'</span>][<span class="number">0</span>]<span class="comment">#前面签名验证必须通过【为了数据安全】</span></span><br><span class="line">		</span><br><span class="line">		<span class="comment">#执行sql文件，查询数据，返回List</span></span><br><span class="line">		group_list=Target_Group_Handler.target_group_list(instance)</span><br><span class="line"></span><br><span class="line">		ret_value=ret_status(<span class="number">0</span>)<span class="comment">#ret_value=&#123;"code":0,"msg":"OK"&#125;#返回的状态码</span></span><br><span class="line">		reset=&#123;&#125;<span class="comment">#封装返回的未加密数据</span></span><br><span class="line"></span><br><span class="line">		<span class="keyword">if</span> group_list:<span class="comment">#判断返回的结果集是否为空</span></span><br><span class="line">			crowdCount=<span class="number">0</span></span><br><span class="line">			activeDatas=[]</span><br><span class="line">			launchDatas=[]</span><br><span class="line">			runtimeNums=[]</span><br><span class="line"></span><br><span class="line">			<span class="keyword">for</span> app <span class="keyword">in</span> group_list:</span><br><span class="line">				<span class="comment">#...此处省略</span></span><br><span class="line">			reset[<span class="string">"crowdCount"</span>]=crowdCount<span class="comment">#人群规模</span></span><br><span class="line">			reset[<span class="string">"activeDatas"</span>]=activeDatas<span class="comment">#活跃</span></span><br><span class="line">			reset[<span class="string">"launchDatas"</span>]=launchDatas<span class="comment">#启动次数</span></span><br><span class="line">			reset[<span class="string">"runtimeNums"</span>]=runtimeNums<span class="comment">#使用时长</span></span><br><span class="line">			</span><br><span class="line">			<span class="comment">#加密处理</span></span><br><span class="line">			<span class="comment">#为了返回值兼容java前端和后台需要把python对象转化成json串</span></span><br><span class="line">			ret_value[<span class="string">'result'</span>] =aesTool.aes_base64_encrypt(json.dumps(reset),appkey) </span><br><span class="line">		<span class="keyword">else</span>:<span class="comment">#若查询不到数据则返回空结果集</span></span><br><span class="line">			ret_value[<span class="string">'result'</span>] =aesTool.aes_base64_encrypt(json.dumps(reset),appkey) </span><br><span class="line"></span><br><span class="line">		DS_LOG.info(<span class="string">'%s - %s - Target_Group_Handler'</span>%(ip,cid))<span class="comment">#记录调用该API的cid和ip地址</span></span><br><span class="line">		<span class="comment">#return正常结果</span></span><br><span class="line">		res=res_format(callback,ret_value)</span><br><span class="line">		<span class="keyword">return</span> instance.write(res)<span class="comment">#return encrypted data</span></span><br><span class="line">	<span class="string">"""</span><br><span class="line">	@return 返回查询出符合条件的数据</span><br><span class="line">	"""</span></span><br><span class="line"><span class="meta">	@staticmethod</span></span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">target_group_list</span><span class="params">(instance)</span>:</span><span class="comment">#调用sql文件并且传递动态参数,并且sql文件中不能有任何注释，也最好不要有中文参数</span></span><br><span class="line">		params=instance.get_argument(<span class="string">"params"</span>,<span class="keyword">None</span>)<span class="comment">#获取参数</span></span><br><span class="line"></span><br><span class="line">		<span class="keyword">if</span> params:</span><br><span class="line">			criterions=eval(params)<span class="comment">#获取人群list,把字符串转化为map</span></span><br><span class="line">			<span class="comment">#获取第一个群组的人群属性</span></span><br><span class="line">			<span class="comment">#people properties</span></span><br><span class="line">			gender=criterions[<span class="string">"criterions"</span>][<span class="number">0</span>][<span class="string">"gender"</span>]</span><br><span class="line">			<span class="comment">#此后省略...</span></span><br><span class="line">			sqlpath=os.path.join(os.path.abspath(<span class="string">'.'</span>), <span class="string">'sql/targetgroup_v1.1.sql'</span>)</span><br><span class="line">			sql= open(sqlpath).read()</span><br><span class="line">			group_apps=instance.db.query(sql%(需要传递的参数列表和一般的sql类似))</span><br></pre></td></tr></table></figure></p>
+<h2 id="针对长时间查询数据库但同时需要及时响应处理"><a href="#针对长时间查询数据库但同时需要及时响应处理" class="headerlink" title="针对长时间查询数据库但同时需要及时响应处理"></a><strong>针对长时间查询数据库但同时需要及时响应处理</strong></h2><p>以上是用于高并发处理请求，若数据库处理特别慢，但是又需要及时响应前端<br>需要做一些改动：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Target_Group_Handler_v1</span><span class="params">(BaseHandler)</span>:</span></span><br><span class="line"><span class="meta">	@auth_required</span></span><br><span class="line"><span class="meta">	@tornado.web.asynchronous</span></span><br><span class="line"><span class="meta">	@gen.coroutine</span></span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">get</span><span class="params">(self)</span>:</span></span><br><span class="line">		set_default_headers(self)</span><br><span class="line">		<span class="keyword">yield</span> executor.submit(Target_Group_Handler_v1.do_handler,self)</span><br><span class="line">		self.finish()</span><br><span class="line"></span><br><span class="line"><span class="meta">	@auth_required</span></span><br><span class="line"><span class="meta">	@tornado.web.asynchronous</span></span><br><span class="line"><span class="meta">	@gen.coroutine</span></span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">post</span><span class="params">(self)</span>:</span></span><br><span class="line">		set_default_headers(self)</span><br><span class="line">		callback=<span class="keyword">None</span></span><br><span class="line">		appkey=self.request.arguments[<span class="string">'pwd'</span>][<span class="number">0</span>]</span><br><span class="line"></span><br><span class="line">		ret_value=ret_status(<span class="number">0</span>)</span><br><span class="line">		ret_value[<span class="string">"result"</span>]=aesTool.aes_base64_encrypt(<span class="string">"&#123;'status':'processing'&#125;"</span>,appkey)</span><br><span class="line">		res=res_format(callback,ret_value)</span><br><span class="line">		self.write(res)</span><br><span class="line">		self.finish()<span class="comment">#必须有此句，立即响应前端请求，然后继续后续处理</span></span><br><span class="line"></span><br><span class="line">		<span class="comment">#提前返回执行状态</span></span><br><span class="line">		<span class="comment">#开启协程异步执行任务</span></span><br><span class="line">		<span class="keyword">yield</span> executor.submit(Target_Group_Handler_v1.do_handler,self)</span><br><span class="line">		</span><br><span class="line">	<span class="string">'''提交任务到异步任务队列，并通过异步任务调度器，及时处理队列中的内容，处理完成后又接口通知调用方，到指定的接口获取数据'''</span></span><br><span class="line"><span class="meta">	@classmethod</span></span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">do_handler</span><span class="params">(cls,instance)</span>:</span></span><br><span class="line">		<span class="keyword">pass</span></span><br></pre></td></tr></table></figure></p>
+<p>公司业务需求，同时为了减缓数据库服务器高并发负载压力，才处理成异步实时<br>这里做了一下简单的笔记哈，<br>后续改进会及时跟进 ( <em>^_^</em> )  </p>
+
+      
+    </div>
+    
+    <div>
+      
+        
+<div id="wechat_subscriber" style="display: block； padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/uploads/wechat-qcode.jpg" alt="Boss Guo wechat" style="width: 200px; max-width: 100%;"/>
+    <div>欢迎您扫一扫上面的微信公众号，订阅我的博客,将会定期更新！</div>
+</div>
+
+      
+    </div>
+
+    <div>
+      
+        
+<div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center">
+  <div>有钱的捧个钱场，没钱的捧个人场，谢谢大家咚~</div>
+  <button id="rewardButton", disable="enable", onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}", style="cursor: pointer; border: 0; outline: 0; border-radius: 100%; padding: 0; margin: 0; letter-spacing: normal; text-transform: none; text-indent: 0px; text-shadow: none">
+    <span onmouseover="this.style.color='rgb(236,96,0)';this.style.background='rgb(204,204,204)'" onMouseOut="this.style.color='#fff';this.style.background='rgb(236,96,0)'" style="display: inline-block; width: 70px; height: 70px; border-radius: 100%; line-height: 81px; color: #fff; font: 400 35px/75px 'microsofty'; background: rgb(236,96,0)">赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/zhifu.jpg" alt="Boss Guo WeChat Pay" style="width: 200px; max-width: 100%; display: inline-block"/>
+        <p>微信打赏</p>
+      </div>
+    
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/zhifu.jpg" alt="Boss Guo Alipay" style="width: 200px; max-width: 100%; display: inline-block"/>
+        <p>支付宝打赏</p>
+      </div>
+    
+  </div>
+</div>
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/python/" rel="tag">#python</a>
+          
+            <a href="/tags/高并发/" rel="tag">#高并发</a>
+          
+            <a href="/tags/tornado，coroutine/" rel="tag">#tornado，coroutine</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/05/10/hello-world/" rel="next" title="Hello World">
+                <i class="fa fa-chevron-left"></i> Hello World
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        
+  <div class="bdsharebuttonbox">
+    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+    <a href="#" class="bds_douban" data-cmd="douban" title="分享到豆瓣网"></a>
+    <a href="#" class="bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+    <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
+    <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+    <a href="#" class="bds_tieba" data-cmd="tieba" title="分享到百度贴吧"></a>
+    <a href="#" class="bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+    <a href="#" class="bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+    <a href="#" class="bds_more" data-cmd="more"></a>
+    <a class="bds_count" data-cmd="count"></a>
+  </div>
+  <script>
+    window._bd_share_config = {
+      "common": {
+        "bdText": "",
+        "bdMini": "2",
+        "bdMiniList": false,
+        "bdPic": ""
+      },
+      "share": {
+        "bdSize": "16",
+        "bdStyle": "0"
+      },
+      "image": {
+        "viewList": ["tsina", "douban", "sqq", "qzone", "weixin", "twi", "fbook"],
+        "viewText": "分享到：",
+        "viewSize": "16"
+      }
+    }
+  </script>
+
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+  <p>本周热评文章</p>
+  <div class="ds-top-threads" data-range="weekly" data-num-items="8"></div>
+
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/05/10/python高并发和异步实时处理/"
+           data-title="python高并发和异步实时处理" data-url="http://buster2015.github.io/2016/05/10/python高并发和异步实时处理/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/icon.jpg"
+               alt="Boss Guo" />
+          <p class="site-author-name" itemprop="name">Boss Guo</p>
+          <p class="site-description motion-element" itemprop="description">Only改变才会进步</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">4</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/rss2.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/buster2015" target="_blank" title="github">
+                  
+                    <i class="fa fa-globe"></i>
+                  
+                  github
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/3236831863" target="_blank" title="weibo">
+                  
+                    <i class="fa fa-globe"></i>
+                  
+                  weibo
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#高并发处理"><span class="nav-number">1.</span> <span class="nav-text">高并发处理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#针对长时间查询数据库但同时需要及时响应处理"><span class="nav-number">2.</span> <span class="nav-text">针对长时间查询数据库但同时需要及时响应处理</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+<div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Boss Guo</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+<!-- 
+<span id="busuanzi_container_site_pv">
+    &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;本站总访问量<span id="busuanzi_value_site_pv"></span>次
+</span>
+-->
+        
+
+<div class="busuanzi-count">
+
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv"><i class="fa fa-user"></i><span class="busuanzi-value" id="busuanzi_value_site_uv"></span></span>
+  
+
+  
+    <span class="site-pv"><i class="fa fa-eye"></i><span class="busuanzi-value" id="busuanzi_value_site_pv"></span></span>
+  
+  
+</div>
+
+
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"buster2015"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+      
+      <script src="/vendors/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+      <script src="/js/src/hook-duoshuo.js"></script>
+    
+  
+
+
+
+
+
+  
+  
+  
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("s0nMTojk3zz2SeJDmbtBs9pJ-gzGzoHsz", "W3eHq4DVXrji8BJOwh1Kyj9v");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+</body>
+</html>

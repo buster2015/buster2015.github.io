@@ -1,0 +1,1012 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="windows,效率,个人笔记," />
+
+
+
+
+
+  <link rel="alternate" href="/rss2.xml" title="Darry Ring" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/icon.jpg?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="10:07 上午 星期六, 四月 23, 2016
+成为习惯&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;日常记事中，用普遍文本的情况不在少数，但是文本本身的并没有特殊的格式含义，要表示一些特殊的含义也会在头或尾加一些*号，下划线，分割线等，来隔断文本块，区分内容信息等。那现在Markdown变得非常合适，只要稍微记住几个语法字符，">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MarkDown的简单用法">
+<meta property="og:url" content="http://buster2015.github.io/2016/05/10/MarkDown-SimpleUsage/index.html">
+<meta property="og:site_name" content="Darry Ring">
+<meta property="og:description" content="10:07 上午 星期六, 四月 23, 2016
+成为习惯&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;日常记事中，用普遍文本的情况不在少数，但是文本本身的并没有特殊的格式含义，要表示一些特殊的含义也会在头或尾加一些*号，下划线，分割线等，来隔断文本块，区分内容信息等。那现在Markdown变得非常合适，只要稍微记住几个语法字符，">
+<meta property="og:image" content="http://buster2015.github.io/images/icon.jpg">
+<meta property="og:image" content="http://buster2015.github.io/images/cutimage.png">
+<meta property="og:updated_time" content="2016-04-24T13:19:28.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="MarkDown的简单用法">
+<meta name="twitter:description" content="10:07 上午 星期六, 四月 23, 2016
+成为习惯&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;日常记事中，用普遍文本的情况不在少数，但是文本本身的并没有特殊的格式含义，要表示一些特殊的含义也会在头或尾加一些*号，下划线，分割线等，来隔断文本块，区分内容信息等。那现在Markdown变得非常合适，只要稍微记住几个语法字符，">
+<meta name="twitter:image" content="http://buster2015.github.io/images/icon.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 114784825373363200,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> MarkDown的简单用法 | Darry Ring </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?0c6e13777584ce7d6cd382de90d49c0b";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta custom-logo">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Darry Ring</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">just do it</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-th fa-fw"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-user fa-fw"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tagcloud">
+          <a href="/tagcloud" rel="section">
+            
+              <i class="menu-item-icon fa fa-question-circle fa-fw"></i> <br />
+            
+            标签云
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404.html" rel="section">
+            
+              <i class="menu-item-icon fa fa-heartbeat fa-fw"></i> <br />
+            
+            公益404
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-recent_posts">
+          <a href="/recent_posts" rel="section">
+            
+              <i class="menu-item-icon fa fa-question-circle fa-fw"></i> <br />
+            
+            最近文章
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="#" class="st-search-show-outputs">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <form class="site-search-form">
+  <input type="text" id="st-search-input" class="st-search-input st-default-search-input" />
+</form>
+
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+    (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+    e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+  _st('install', 'b_txJ4ddk5cBk4yup9U6','2.0.0');
+</script>
+
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                MarkDown的简单用法
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-05-10T17:55:32+08:00" content="2016-05-10">
+              2016-05-10
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/工具类/" itemprop="url" rel="index">
+                    <span itemprop="name">工具类</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/05/10/MarkDown-SimpleUsage/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/10/MarkDown-SimpleUsage/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/05/10/MarkDown-SimpleUsage/" class="leancloud_visitors" data-flag-title="MarkDown的简单用法">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+              &nbsp; | &nbsp;
+              <span class="page-pv"><i class="fa fa-file-o"></i>
+              <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+              </span>
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><img src="/images/icon.jpg" alt=" big data is new energy "></p>
+<hr>
+<p>10:07 上午 星期六, 四月 23, 2016</p>
+<h2 id="成为习惯"><a href="#成为习惯" class="headerlink" title="成为习惯"></a><strong>成为习惯</strong></h2><p><blockquote><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;日常记事中，用普遍文本的情况不在少数，但是文本本身的并没有特殊的格式含义，要表示一些特殊的含义也会在头或尾加一些*号，下划线，分割线等，来隔断文本块，区分内容信息等。那现在Markdown变得非常合适，只要稍微记住几个语法字符，就可以轻松的标记出来标题、段落、列表，长久使用形成习惯，能够带来很多方便。</p>
+<p></p><p>所以可以把Markdown作为日常文档记录语言。</p></blockquote><br><a id="more"></a></p>
+<h2 id="变得简单"><a href="#变得简单" class="headerlink" title="变得简单"></a><strong>变得简单</strong></h2><p><small>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;markdown是一种轻量级的标记语言。语法简单，书写简单，只需要像写普通文本一样，在行首加上特殊的字符，就可以标记成标题，段落，列表，就是markdown。markdowng格式的文本，更容易阅读和理解，而且可以轻松转化成html，pdf等。详细标签说明见下面链接。</small></p>
+<h2 id="使用工具"><a href="#使用工具" class="headerlink" title="使用工具"></a><strong>使用工具</strong></h2><p><small>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;使用Notepad,EditPlus,UltraEdit等等，只要可以写文本的编辑器都可以。让Notepad支持Markdonw语法高亮</small></p>
+<ol>
+<li>下载userDefineLang.xml</li>
+<li>将 userDefineLang.xml 放置到此目录：C:\Users\Administrator\AppData\Roaming\Notepad++</li>
+<li>重启 Notepad++，在语言菜单下可以看到自定义的 Markdown 高亮规则</li>
+</ol>
+<p><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;也可以使用现成的工具MarkdownPad，可以自动生成Markdown标签。</strong></p>
+<h2 id="开始使用，先搭建环境，各种安装即可，点击下载"><a href="#开始使用，先搭建环境，各种安装即可，点击下载" class="headerlink" title="开始使用，先搭建环境，各种安装即可，点击下载"></a><strong>开始使用，先搭建环境，各种安装即可，点击下载</strong></h2><ol>
+<li><p><a href="http://www.python.org/download/" title="python-2.7.2.msi" target="_blank" rel="external">python-2.7.2.msi</a></p>
+</li>
+<li><p><a href="http://www.python.org/download/" title="Markdown-2.0.win32.exe" target="_blank" rel="external">Markdown-2.0.win32.exe</a></p>
+<p><a href="https://pypi.python.org/packages/any/M/Markdown/Markdown-2.4.win-amd64.exe#md5=87479a3d05c9c05a1ab5d610ee4f99ec" title="Markdown-2.4.win-amd64.exe" target="_blank" rel="external">Markdown-2.4.win-amd64.exe</a> <code>有需要64位的童鞋可以点击这里下载哦！</code></p>
+</li>
+<li><p><a href="http://markdownpad.com/download/MarkdownPad.application" title="MarkdownPad.exe" target="_blank" rel="external">MarkdownPad.exe</a> <code>这个是可以预览大侠们写出的效果</code></p>
+</li>
+<li><p><a href="http://files.cnblogs.com/purediy/pandoc-1.9.4.2b-setup.rar" title="pandoc-1.9.4.2b-setup.exe" target="_blank" rel="external">pandoc-1.9.4.2b-setup.exe</a></p>
+</li>
+</ol>
+<h2 id="助你一臂之力的链接"><a href="#助你一臂之力的链接" class="headerlink" title="助你一臂之力的链接"></a><strong>助你一臂之力的链接</strong></h2><ul>
+<li><a href="http://wowubuntu.com/markdown/index.html" title="Markdown 语法说明 (简体中文版)" target="_blank" rel="external">Markdown 语法说明 (简体中文版)</a></li>
+<li><a href="http://ued.taobao.com/blog/2012/07/getting-started-with-markdown/" title="开始使用 Markdown" target="_blank" rel="external">开始使用 Markdown</a></li>
+<li><a href="http://www.openfoundry.org/en/news/8814?task=view" title="Pandoc 用命令行转换标记语音！" target="_blank" rel="external">Pandoc 用命令行转换标记语音！</a></li>
+<li><a href="http://blog.xiedaima.org/notepad-markdown/" title="Notepad++ 加入 Markdown 支持" target="_blank" rel="external">Notepad++ 加入 Markdown 支持</a></li>
+</ul>
+<h2 id="下面试着写一下程序员们的代码吧"><a href="#下面试着写一下程序员们的代码吧" class="headerlink" title="下面试着写一下程序员们的代码吧"></a><strong>下面试着写一下程序员们的代码吧</strong></h2><ul>
+<li><p>简单<strong>shell</strong>脚本：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">!/bin/bash</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> &#123;<span class="number">0.</span><span class="number">.5</span>&#125;;do</span><br><span class="line">  echo $i</span><br><span class="line">done</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>简单<strong>python</strong>脚本：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> __name__==<span class="string">"__main__"</span>:</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">6</span>):</span><br><span class="line">        <span class="keyword">print</span> i</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>简单<strong>java</strong>语言：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">HelloDigital</span></span>&#123;</span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String [] args)</span></span>&#123;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;<span class="number">6</span>;i++)&#123;</span><br><span class="line">	  System.out.println(i);</span><br><span class="line">	&#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="看一下表格如何表现吧"><a href="#看一下表格如何表现吧" class="headerlink" title="看一下表格如何表现吧"></a><strong>看一下表格如何表现吧</strong></h2><table>
+<thead>
+<tr>
+<th>ID</th>
+<th>姓名</th>
+<th>年龄</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 001</td>
+<td>James</td>
+<td>21</td>
+</tr>
+<tr>
+<td> 002</td>
+<td>John</td>
+<td>23</td>
+</tr>
+<tr>
+<td> 003</td>
+<td>guohongyan</td>
+<td>22</td>
+</tr>
+</tbody>
+</table>
+<h2 id="见本文的效果图"><a href="#见本文的效果图" class="headerlink" title="见本文的效果图"></a><strong>见本文的效果图</strong></h2><p>本文的内容Markdown文本，以及预览如下：</p>
+<p><img src="/images/cutimage.png" alt="本文效果图"></p>
+<hr>
+<p><em>其他markdown</em> <strong>具体使用</strong> <strong><em>说明</em></strong></p>
+<ul>
+<li><p><a href="http://blog.csdn.net/renfufei/article/details/41648021" title="markdown基础用法so easy" target="_blank" rel="external">markdown基础用法so easy</a></p>
+</li>
+<li><p><a href="http://www.cppblog.com/deercoder/archive/2012/06/17/179195.html" title="markdown基础用法比较全面" target="_blank" rel="external">markdown基础用法比较全面</a></p>
+</li>
+</ul>
+<p><strong>以后大家就都可以发表一篇装逼的文章了哈，纯属玩笑，好好练习吧~</strong></p>
+
+      
+    </div>
+    
+    <div>
+      
+        
+<div id="wechat_subscriber" style="display: block； padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/uploads/wechat-qcode.jpg" alt="Boss Guo wechat" style="width: 200px; max-width: 100%;"/>
+    <div>欢迎您扫一扫上面的微信公众号，订阅我的博客,将会定期更新！</div>
+</div>
+
+      
+    </div>
+
+    <div>
+      
+        
+<div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center">
+  <div>有钱的捧个钱场，没钱的捧个人场，谢谢大家咚~</div>
+  <button id="rewardButton", disable="enable", onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}", style="cursor: pointer; border: 0; outline: 0; border-radius: 100%; padding: 0; margin: 0; letter-spacing: normal; text-transform: none; text-indent: 0px; text-shadow: none">
+    <span onmouseover="this.style.color='rgb(236,96,0)';this.style.background='rgb(204,204,204)'" onMouseOut="this.style.color='#fff';this.style.background='rgb(236,96,0)'" style="display: inline-block; width: 70px; height: 70px; border-radius: 100%; line-height: 81px; color: #fff; font: 400 35px/75px 'microsofty'; background: rgb(236,96,0)">赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/zhifu.jpg" alt="Boss Guo WeChat Pay" style="width: 200px; max-width: 100%; display: inline-block"/>
+        <p>微信打赏</p>
+      </div>
+    
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/zhifu.jpg" alt="Boss Guo Alipay" style="width: 200px; max-width: 100%; display: inline-block"/>
+        <p>支付宝打赏</p>
+      </div>
+    
+  </div>
+</div>
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/windows/" rel="tag">#windows</a>
+          
+            <a href="/tags/效率/" rel="tag">#效率</a>
+          
+            <a href="/tags/个人笔记/" rel="tag">#个人笔记</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/05/10/随记/" rel="prev" title="服务架构图">
+                服务架构图 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        
+  <div class="bdsharebuttonbox">
+    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+    <a href="#" class="bds_douban" data-cmd="douban" title="分享到豆瓣网"></a>
+    <a href="#" class="bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+    <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
+    <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+    <a href="#" class="bds_tieba" data-cmd="tieba" title="分享到百度贴吧"></a>
+    <a href="#" class="bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+    <a href="#" class="bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+    <a href="#" class="bds_more" data-cmd="more"></a>
+    <a class="bds_count" data-cmd="count"></a>
+  </div>
+  <script>
+    window._bd_share_config = {
+      "common": {
+        "bdText": "",
+        "bdMini": "2",
+        "bdMiniList": false,
+        "bdPic": ""
+      },
+      "share": {
+        "bdSize": "16",
+        "bdStyle": "0"
+      },
+      "image": {
+        "viewList": ["tsina", "douban", "sqq", "qzone", "weixin", "twi", "fbook"],
+        "viewText": "分享到：",
+        "viewSize": "16"
+      }
+    }
+  </script>
+
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+  <p>本周热评文章</p>
+  <div class="ds-top-threads" data-range="weekly" data-num-items="8"></div>
+
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/05/10/MarkDown-SimpleUsage/"
+           data-title="MarkDown的简单用法" data-url="http://buster2015.github.io/2016/05/10/MarkDown-SimpleUsage/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/icon.jpg"
+               alt="Boss Guo" />
+          <p class="site-author-name" itemprop="name">Boss Guo</p>
+          <p class="site-description motion-element" itemprop="description">Only改变才会进步</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">4</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/rss2.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/buster2015" target="_blank" title="github">
+                  
+                    <i class="fa fa-globe"></i>
+                  
+                  github
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/3236831863" target="_blank" title="weibo">
+                  
+                    <i class="fa fa-globe"></i>
+                  
+                  weibo
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#成为习惯"><span class="nav-number">1.</span> <span class="nav-text">成为习惯</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#变得简单"><span class="nav-number">2.</span> <span class="nav-text">变得简单</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用工具"><span class="nav-number">3.</span> <span class="nav-text">使用工具</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#开始使用，先搭建环境，各种安装即可，点击下载"><span class="nav-number">4.</span> <span class="nav-text">开始使用，先搭建环境，各种安装即可，点击下载</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#助你一臂之力的链接"><span class="nav-number">5.</span> <span class="nav-text">助你一臂之力的链接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#下面试着写一下程序员们的代码吧"><span class="nav-number">6.</span> <span class="nav-text">下面试着写一下程序员们的代码吧</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#看一下表格如何表现吧"><span class="nav-number">7.</span> <span class="nav-text">看一下表格如何表现吧</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#见本文的效果图"><span class="nav-number">8.</span> <span class="nav-text">见本文的效果图</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+<div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Boss Guo</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+<!-- 
+<span id="busuanzi_container_site_pv">
+    &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;本站总访问量<span id="busuanzi_value_site_pv"></span>次
+</span>
+-->
+        
+
+<div class="busuanzi-count">
+
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv"><i class="fa fa-user"></i><span class="busuanzi-value" id="busuanzi_value_site_uv"></span></span>
+  
+
+  
+    <span class="site-pv"><i class="fa fa-eye"></i><span class="busuanzi-value" id="busuanzi_value_site_pv"></span></span>
+  
+  
+</div>
+
+
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"buster2015"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+      
+      <script src="/vendors/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+      <script src="/js/src/hook-duoshuo.js"></script>
+    
+  
+
+
+
+
+
+  
+  
+  
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("s0nMTojk3zz2SeJDmbtBs9pJ-gzGzoHsz", "W3eHq4DVXrji8BJOwh1Kyj9v");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+</body>
+</html>
